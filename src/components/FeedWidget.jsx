@@ -41,7 +41,7 @@ async function fetchYouTube(channelId) {
 
 async function fetchWordPress(apiUrl) {
   const res = await fetch(
-    `${apiUrl}?per_page=1&_fields=id,title,link,date&orderby=date&order=desc`
+    `${apiUrl}?per_page=1&_fields=id,title,link,date_gmt&orderby=date&order=desc`
   );
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const [post] = await res.json();
@@ -49,7 +49,7 @@ async function fetchWordPress(apiUrl) {
   return {
     title: post.title.rendered.replace(/&#(\d+);/g, (_, c) => String.fromCharCode(c)),
     url:   post.link,
-    date:  post.date,
+    date:  post.date_gmt + 'Z', // append Z so JS parses it as UTC, not local time
     thumb: null,
   };
 }
