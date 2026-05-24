@@ -60,12 +60,12 @@
   width: 32px;
   height: 32px;
   flex-shrink: 0;
-  color: #666666;
+  color: #999999;
   transition: color 180ms ease;
 }
 
 .card:hover .icon {
-  color: #aaaaaa;
+  color: #dddddd;
 }
 
 .icon svg {
@@ -92,18 +92,18 @@
 .label {
   font-size: 13px;
   font-weight: 500;
-  color: #cccccc;
+  color: #e8e8e8;
   letter-spacing: 0.03em;
   transition: color 180ms ease;
 }
 
 .card:hover .label {
-  color: #f0f0f0;
+  color: #ffffff;
 }
 
 .desc {
   font-size: 11px;
-  color: #555555;
+  color: #888888;
   letter-spacing: 0.02em;
   white-space: nowrap;
   overflow: hidden;
@@ -112,13 +112,13 @@
 }
 
 .card:hover .desc {
-  color: #888888;
+  color: #bbbbbb;
 }
 
 /* Arrow */
 .arrow {
   font-size: 13px;
-  color: #444444;
+  color: #666666;
   font-family: var(--font);
   width: 16px;
   text-align: right;
@@ -127,7 +127,7 @@
 }
 
 .card:hover .arrow {
-  color: #999999;
+  color: #cccccc;
   transform: translateX(2px);
 }
 

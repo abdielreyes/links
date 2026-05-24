@@ -4,6 +4,20 @@
     "handle": "@abdiel",
     "tagline": "programmer & melonaniac"
   },
+  "feeds": [
+    {
+      "id": "youtube",
+      "label": "latest video",
+      "type": "youtube",
+      "channelId": "UC0Ie6sIJq-EK7eXildyEWIA"
+    },
+    {
+      "id": "blog",
+      "label": "latest post",
+      "type": "wordpress",
+      "apiUrl": "https://blog.abdielreyes.com/wp-json/wp/v2/posts"
+    }
+  ],
   "links": [
     {
       "id": "youtube",

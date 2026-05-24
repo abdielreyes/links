@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import MatrixRain from './components/MatrixRain';
 import LinkCard from './components/LinkCard';
+import FeedWidget from './components/FeedWidget';
 import config from './links.json';
 import styles from './App.module.css';
 
@@ -31,8 +32,23 @@ function TypingText({ text, speed = 70 }) {
   );
 }
 
+function Prompt({ cmd }) {
+  const { handle } = config.profile;
+  return (
+    <div className={styles.promptLine}>
+      <span className={styles.promptUser}>{handle}</span>
+      <span className={styles.promptAt}>@</span>
+      <span className={styles.promptHost}>links</span>
+      <span className={styles.promptColon}>:</span>
+      <span className={styles.promptPath}>~</span>
+      <span className={styles.promptSym}>$</span>
+      <span className={styles.promptCmd}>&nbsp;{cmd}</span>
+    </div>
+  );
+}
+
 export default function App() {
-  const { profile, links } = config;
+  const { profile, links, feeds } = config;
 
   return (
     <div className={styles.root}>
@@ -52,17 +68,9 @@ export default function App() {
 
         {/* Terminal body */}
         <div className={styles.termBody}>
-          {/* whoami command */}
-          <div className={styles.promptLine}>
-            <span className={styles.promptUser}>{profile.handle}</span>
-            <span className={styles.promptAt}>@</span>
-            <span className={styles.promptHost}>links</span>
-            <span className={styles.promptColon}>:</span>
-            <span className={styles.promptPath}>~</span>
-            <span className={styles.promptSym}>$</span>
-            <span className={styles.promptCmd}>&nbsp;whoami</span>
-          </div>
 
+          {/* whoami */}
+          <Prompt cmd="whoami" />
           <div className={styles.whoamiOut}>
             <p className={styles.name}>{profile.name}</p>
             <p className={styles.tagline}>
@@ -70,25 +78,27 @@ export default function App() {
             </p>
           </div>
 
-          {/* ls command */}
-          <div className={styles.promptLine} style={{ marginTop: '20px' }}>
-            <span className={styles.promptUser}>{profile.handle}</span>
-            <span className={styles.promptAt}>@</span>
-            <span className={styles.promptHost}>links</span>
-            <span className={styles.promptColon}>:</span>
-            <span className={styles.promptPath}>~</span>
-            <span className={styles.promptSym}>$</span>
-            <span className={styles.promptCmd}>&nbsp;ls -la ./socials/</span>
-          </div>
+          {/* latest content */}
+          {feeds?.length > 0 && (
+            <>
+              <Prompt cmd="cat ./latest" />
+              <div className={styles.feeds}>
+                {feeds.map((feed, i) => (
+                  <FeedWidget key={feed.id} feed={feed} index={i} />
+                ))}
+              </div>
+            </>
+          )}
 
-          {/* Links list */}
+          {/* links */}
+          <Prompt cmd="ls -la ./socials/" />
           <div className={styles.links}>
             {links.map((link, i) => (
               <LinkCard key={link.id} link={link} index={i} />
             ))}
           </div>
 
-          {/* Footer prompt */}
+          {/* footer */}
           <div className={styles.footer}>
             <span className={styles.green}>✓</span>
             <span className={styles.dimText}>&nbsp;{links.length} entries found</span>
