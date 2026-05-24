@@ -1,0 +1,79 @@
+{
+  "profile": {
+    "name": "Abdiel",
+    "handle": "@abdiel",
+    "tagline": "programmer & melonaniac"
+  },
+  "links": [
+    {
+      "id": "youtube",
+      "label": "YouTube",
+      "description": "my music",
+      "url": "https://youtube.com/@simellamoabdiel3585",
+      "icon": "yt"
+    },
+    {
+      "id": "applemusic",
+      "label": "Apple Music",
+      "description": "what i'm listening to",
+      "url": "https://music.apple.com/profile/abykings1",
+      "icon": "applemusic"
+    },
+    {
+      "id": "tiktok",
+      "label": "TikTok",
+      "description": "short clips & studio takes",
+      "url": "https://tiktok.com/@abdielreyes__",
+      "icon": "tiktok"
+    },
+    {
+      "id": "instagram",
+      "label": "Instagram",
+      "description": "my life",
+      "url": "https://instagram.com/abdielreyes_",
+      "icon": "ig"
+    },
+    {
+      "id": "x",
+      "label": "X / Twitter",
+      "description": "my thoughts",
+      "url": "https://x.com/abdielreyes_",
+      "icon": "x"
+    },
+    {
+      "id": "guestbook",
+      "label": "Guestbook",
+      "description": "write me a message!",
+      "url": "https://guestbook.abdielreyes.com",
+      "icon": "guestbook"
+    },
+    {
+      "id": "blog",
+      "label": "My Blog",
+      "description": "my brain's notebook",
+      "url": "https://blog.abdielreyes.com",
+      "icon": "blog"
+    },
+    {
+      "id": "github",
+      "label": "GitHub",
+      "description": "code & projects",
+      "url": "https://github.com/abdielreyes",
+      "icon": "gh"
+    },
+    {
+      "id": "portfolio",
+      "label": "Portfolio",
+      "description": "professional profile",
+      "url": "https://abdielreyes.com",
+      "icon": "portfolio"
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "description": "professional profile",
+      "url": "https://linkedin.com/in/eabdielreyesr",
+      "icon": "li"
+    }
+  ]
+}
