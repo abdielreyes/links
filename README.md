@@ -1,16 +1,57 @@
-# React + Vite
+# links
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal links page for [@abdiel](https://abdielreyes.com) — built with React, Vite, and Bun. Terminal/hacker aesthetic with a matrix rain background and grayscale color scheme.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Bun** — package manager & runtime
+- **React 19** — UI
+- **Vite** — dev server & bundler
+- **CSS Modules** — scoped styles, no CSS-in-JS
 
-## React Compiler
+## Adding or editing links
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+All content lives in one file:
 
-## Expanding the ESLint configuration
+```
+src/links.json
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Each entry follows this shape:
+
+```json
+{
+  "id": "github",
+  "label": "GitHub",
+  "description": "code & projects",
+  "url": "https://github.com/abdielreyes",
+  "icon": "gh"
+}
+```
+
+Available icons: `gh` `li` `yt` `tiktok` `ig` `x` `applemusic` `guestbook` `blog` `portfolio` `web`
+
+To add a custom page with no specific icon, use `"icon": "web"`.
+
+## Dev
+
+```bash
+bun install
+bun dev
+```
+
+## Build
+
+```bash
+bun run build      # outputs to dist/
+bun run preview    # preview the production build locally
+```
+
+## Docker
+
+Builds with Bun, serves with nginx on port 80.
+
+```bash
+docker build -t links .
+docker run -p 80:80 links
+```
